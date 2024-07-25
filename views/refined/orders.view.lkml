@@ -27,7 +27,7 @@ view: +orders {
 
   dimension_group: completion {
     description: "Time to complete order"
-    label: "Order completion"
+    label: "Order Completion"
     hidden: no
     type: duration
     sql_start: ${created_datetime_raw} ;;
@@ -47,6 +47,7 @@ view: +orders {
   }
 
   measure: average_order_completion_duration {
+    type: average
     description: "Average time to complete order in minutes"
     hidden: no
     sql: ${minutes_completion} ;;
