@@ -8,6 +8,14 @@ view: +companies {
     hidden: no
   }
 
+  dimension: founding {
+    label: "Founding Date"
+    description: "Company founding date"
+    hidden: no
+    type: date
+    sql: ${TABLE}.founding_date ;;
+  }
+
   # # You can specify the table name if it's different from the view name:
   # sql_table_name: my_schema_name.tester ;;
   #

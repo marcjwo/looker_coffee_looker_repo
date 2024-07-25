@@ -56,12 +56,20 @@ view: +orders {
   #   sql_end: ${created_datetime_date} ;;
   # }
 
-  dimension: time_since_location_was_founded  {
+  dimension: time_since_foundation_division  {
     hidden: no
-    description: "Duration since location that receives the order has existed"
-    label: "Months Since Location Exists"
+    # description: "Duration since location that receives the order has existed"
+    label: "Months Since Division Founding"
     type: number
-    sql: DATE_DIFF(${created_datetime_date},${locations.founding_date}, MONTH) ;;
+    sql: DATE_DIFF(${created_datetime_date},${divisions.founding_date}, MONTH) ;;
+  }
+
+  dimension: time_since_foundation_company  {
+    hidden: no
+    # description: "Duration since location that receives the order has existed"
+    label: "Months Since Company Founding"
+    type: number
+    sql: DATE_DIFF(${created_datetime_date},${companies.founding_date}, MONTH) ;;
   }
 
   measure: average_order_completion_duration {
