@@ -14,7 +14,7 @@ view: +locations {
   dimension: founding {
     label: "Founding Date"
     description: "Location founding date"
-    hidden: no
+    hidden: yes
     type: date
     sql: ${TABLE}.founding_date ;;
   }

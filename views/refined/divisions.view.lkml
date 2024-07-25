@@ -19,7 +19,7 @@ view: +divisions {
   dimension: founding {
     label: "Founding Date"
     description: "Division founding date"
-    hidden: no
+    hidden: yes
     type: date
     sql: ${TABLE}.founding_date ;;
   }
