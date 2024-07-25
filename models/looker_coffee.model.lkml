@@ -1,5 +1,7 @@
 connection: "@{connection_name}"
 
+label: "Looker Coffee [DEMO]"
+
 include: "/explores/orders.explore.lkml"
 
 datagroup: looker_coffee_default_datagroup {

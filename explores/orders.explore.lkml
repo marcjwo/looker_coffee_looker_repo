@@ -2,7 +2,7 @@ include: "/views/refined/*.view.lkml"
 include: "/views/pdt/*.view.lkml"
 
 explore: order_items {
-  label: "Orders, Products, and Customers"
+  label: "(1) Orders, Products, and Customers"
 
   join: orders {
     type: left_outer
