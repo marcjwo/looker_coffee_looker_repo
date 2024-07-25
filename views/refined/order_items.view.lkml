@@ -24,12 +24,28 @@ view: +order_items {
     sql: ${products.cost} ;;
   }
 
+  dimension: item_margin {
+    description: "Item margin"
+    hidden: yes
+    label: "Item margin"
+    sql: ${item_price}-${item_cost} ;;
+  }
+
   measure: total_sales {
     description: "Total Sales"
     hidden: no
     label: "Total Sales"
     sql: ${item_price} ;;
     type: sum
+    value_format_name: usd
+  }
+
+  measure: average_sales {
+    description: "Average Sales"
+    hidden: no
+    label: "Average Sales"
+    sql: ${item_price} ;;
+    type: average
     value_format_name: usd
   }
 
@@ -42,12 +58,30 @@ view: +order_items {
     value_format_name: usd
   }
 
+  measure: average_cost {
+    description: "Average Cost"
+    hidden: no
+    label: "Average Cost"
+    sql: ${item_cost} ;;
+    type: sum
+    value_format_name: usd
+  }
+
   measure: total_margin {
     description: "Total Margin"
     hidden: no
     label: "Total Margin"
-    sql: ${total_sales}-${total_cost} ;;
-    type: number
+    sql: ${item_margin} ;;
+    type: sum
+    value_format_name: usd
+  }
+
+  measure: average_margin {
+    description: "Average Margin"
+    hidden: no
+    label: "Average Margin"
+    sql: ${item_margin} ;;
+    type: average
     value_format_name: usd
   }
 

@@ -5,10 +5,11 @@ label: "Looker Coffee [DEMO]"
 include: "/explores/orders.explore.lkml"
 
 datagroup: looker_coffee_default_datagroup {
+  max_cache_age: "12 hours"
   sql_trigger: SELECT COUNT(*) FROM `@{gcp_project}.@{bq_dataset}.orders` ;;
 }
 
-# persist_with: looker_coffee_default_datagroup
+persist_with: looker_coffee_default_datagroup
 
 
 # include: "/views/*.view.lkml"                # include all views in the views/ folder in this project
