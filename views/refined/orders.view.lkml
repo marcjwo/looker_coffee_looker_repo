@@ -46,14 +46,22 @@ view: +orders {
     sql: CASE WHEN ${dine_in} THEN "Dine-in" ELSE "Takeaway" END ;;
   }
 
-  dimension_group: time_since_location_was_founded  {
+  # dimension_group: time_since_location_was_founded  {
+  #   hidden: no
+  #   description: "Duration sincelocation that receives the order has existed"
+  #   # label: "Days Since Location Exists"
+  #   type: duration
+  #   intervals: []
+  #   sql_start: ${locations.founding_date} ;;
+  #   sql_end: ${created_datetime_date} ;;
+  # }
+
+  dimension: time_since_location_was_founded  {
     hidden: no
-    description: "Duration sincelocation that receives the order has existed"
-    # label: "Days Since Location Exists"
-    type: duration
-    intervals: [month]
-    sql_start: ${locations.founding_date} ;;
-    sql_end: ${created_datetime_date} ;;
+    description: "Duration since location that receives the order has existed"
+    label: "Months Since Location Exists"
+    type: number
+    sql: DATE_DIFF(${created_datetime_date},${locations.founding_date}, MONTH) ;;
   }
 
   measure: average_order_completion_duration {
