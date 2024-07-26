@@ -4,6 +4,7 @@
 view: customer_order_facts {
   derived_table: {
     datagroup_trigger: looker_coffee_default_datagroup
+    # cluster_keys: ["id"]
     explore_source: order_items {
       column: id { field: customers.id }
       column: order_count { field: orders.count }
