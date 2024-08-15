@@ -5,7 +5,7 @@ constant: connection_name {
 }
 
 constant: gcp_project {
-  value: "looker-poc-378509"
+  value: "gemini-looker-demo-dataset"
 }
 
 constant: bq_dataset {
