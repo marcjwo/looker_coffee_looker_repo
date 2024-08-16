@@ -6,6 +6,7 @@ view: +orders {
   dimension: id {
     description: "Order ID"
     label: "Order ID"
+    primary_key: yes
     hidden: no
   }
 
@@ -14,7 +15,7 @@ view: +orders {
     type: time
     description: "Date and time the order was placed"
     hidden: no
-    timeframes: [date, month_name,month, year, quarter, week, day_of_week, raw]
+    timeframes: [date, month_name,month, year, quarter, week, day_of_week, raw, time]
   }
 
   dimension_group: completed_datetime {
@@ -22,7 +23,7 @@ view: +orders {
     type: time
     description: "Date and time the order was completed"
     hidden: no
-    timeframes: [date, month_name, month, year, quarter, week, day_of_week, raw]
+    timeframes: [date, month_name, month, year, quarter, week, day_of_week, raw, time]
   }
 
   dimension_group: completion {

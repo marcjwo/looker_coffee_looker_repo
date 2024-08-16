@@ -1,10 +1,13 @@
 include: "/views/raw/customers.view.lkml"
 
+explore: customers {}
+
 view: +customers {
   label: "Customers"
   fields_hidden_by_default: yes
 
   dimension: id {
+    primary_key: yes
     hidden: no
   }
 

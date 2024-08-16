@@ -4,6 +4,12 @@ view: +products {
   label: "Products"
   fields_hidden_by_default: yes
 
+  dimension: id {
+    description: "Product ID"
+    primary_key: yes
+    hidden: no
+  }
+
   dimension: name {
     description: "Product name"
     hidden: no

@@ -6,6 +6,12 @@ view: +locations {
   label: "Locations"
   fields_hidden_by_default: yes
 
+  dimension: id {
+    description: "Location ID"
+    primary_key: yes
+    hidden: yes
+  }
+
   dimension: name {
     description: "Location name"
     hidden: no

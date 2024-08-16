@@ -7,7 +7,7 @@ view: +order_items {
   dimension: id {
     label: "Order Item ID"
     primary_key: yes
-    hidden: yes
+    hidden: no
   }
 
   dimension: item_price {

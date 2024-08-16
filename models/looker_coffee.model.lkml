@@ -3,6 +3,8 @@ connection: "@{connection_name}"
 label: "Looker Coffee [DEMO]"
 
 include: "/explores/orders.explore.lkml"
+include: "/views/refined/customers.view.lkml"
+# include: "/views/pdt/orders_and_items_flat.view.lkml"
 
 datagroup: looker_coffee_default_datagroup {
   max_cache_age: "12 hours"
