@@ -77,7 +77,7 @@ view: orders_and_items {
     hidden: yes
     label: "Order ID"
     description: "Order ID"
-    type: string
+    type: number
   }
 
   dimension: order_type {

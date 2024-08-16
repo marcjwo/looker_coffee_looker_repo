@@ -46,7 +46,6 @@ explore: order_items {
     relationship: one_to_one
     sql_on: ${orders.customer_id} = ${customer_order_facts.id} ;;
   }
-
 }
 
 explore: orders_and_items_test {
