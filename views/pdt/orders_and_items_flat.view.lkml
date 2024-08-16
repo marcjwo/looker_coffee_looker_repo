@@ -2,14 +2,14 @@
 # include: "orders.explore.lkml"
 include: "/views/refined/*.*"
 
-explore: orders_and_items_test {
-  from:orders_and_items
-  join: customers {
-    sql_on: ${customers.id} = ${orders_and_items_test.customer_id};;
-    type: left_outer
-    relationship: many_to_one
-  }
-}
+# explore: orders_and_items_test {
+#   from:orders_and_items
+#   join: customers {
+#     sql_on: ${customers.id} = ${orders_and_items_test.customer_id};;
+#     type: left_outer
+#     relationship: many_to_one
+#   }
+# }
 
 view: orders_and_items {
   fields_hidden_by_default: yes
