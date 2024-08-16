@@ -2,14 +2,14 @@
 # include: "orders.explore.lkml"
 include: "/views/refined/*.*"
 
-explore: orders_and_items_test {
-  from: orders_and_items
-  # join: customers {
-  #   sql_on: ${customers.id} = ${orders_and_items_test.customer_id};;
-  #   type: left_outer
-  #   relationship: many_to_one
-  # }
-}
+# explore: orders_and_items_test {
+#   from: orders_and_items
+#   # join: customers {
+#   #   sql_on: ${customers.id} = ${orders_and_items_test.customer_id};;
+#   #   type: left_outer
+#   #   relationship: many_to_one
+#   # }
+# }
 
 view: orders_and_items {
   fields_hidden_by_default: yes
@@ -47,7 +47,7 @@ view: orders_and_items {
   # }
 
   dimension: primary_key {
-    hidden: no
+    hidden: yes
     primary_key: yes
     type: number
     # sql: CONCAT(${order_id},${order_items_id}) ;;
@@ -181,122 +181,122 @@ view: orders_and_items {
 
   ##########  ##########  ##########  ##########  ##########  ##########  ##########  ##########  ##########  ##########  ##########  ##########  ##########  ##########  ##########
 
-  # dimension_group: completion {
-  #   description: "Time to complete order"
-  #   view_label: "Orders"
-  #   label: "Order Completion"
-  #   hidden: no
-  #   type: duration
-  #   sql_start: ${created_raw} ;;
-  #   sql_end: ${completed_raw} ;;
-  #   intervals: [minute]
-  # }
+  dimension_group: completion {
+    description: "Time to complete order"
+    view_label: "Orders"
+    label: "Order Completion"
+    hidden: no
+    type: duration
+    sql_start: ${created_raw} ;;
+    sql_end: ${completed_raw} ;;
+    intervals: [minute]
+  }
 
-  # measure: average_order_completion_duration {
-  #   view_label: "Orders"
-  #   type: average
-  #   description: "Average time to complete order in minutes"
-  #   hidden: no
-  #   sql: ${minutes_completion} ;;
-  # }
+  measure: average_order_completion_duration {
+    view_label: "Orders"
+    type: average
+    description: "Average time to complete order in minutes"
+    hidden: no
+    sql: ${minutes_completion} ;;
+  }
 
-  # measure: total_order_items {
-  #   hidden: no
-  #   view_label: "Orders"
-  #   label: "Total Order Items"
-  #   type: count_distinct
-  #   sql: ${order_items_id} ;;
-  # }
+  measure: total_order_items {
+    hidden: no
+    view_label: "Orders"
+    label: "Total Order Items"
+    type: count_distinct
+    sql: ${order_items_id} ;;
+  }
 
-  # measure: total_orders {
-  #   hidden: no
-  #   view_label: "Orders"
-  #   label: "Total Orders"
-  #   type: count_distinct
-  #   sql: ${order_id} ;;
-  # }
+  measure: total_orders {
+    hidden: no
+    view_label: "Orders"
+    label: "Total Orders"
+    type: count_distinct
+    sql: ${order_id} ;;
+  }
 
-  # # dimension: item_price {
-  # #   description: "Items price"
-  # #   hidden: yes
-  # #   label: "Item price"
-  # #   sql: ${products.price} ;;
-  # # }
-
-  # # dimension: item_cost  {
-  # #   description: "Item cost"
-  # #   hidden: yes
-  # #   label: "Item cost"
-  # #   sql: ${products.cost} ;;
-  # # }
-
-  # dimension: item_margin {
-  #   view_label: "Product"
-  #   description: "Item margin"
+  # dimension: item_price {
+  #   description: "Items price"
   #   hidden: yes
-  #   label: "Item margin"
-  #   sql: ${price}-${cost} ;;
+  #   label: "Item price"
+  #   sql: ${products.price} ;;
   # }
 
-  # measure: total_sales {
-  #   view_label: "Orders"
-  #   description: "Total Sales"
-  #   hidden: no
-  #   label: "Total Sales"
-  #   sql: ${price} ;;
-  #   type: sum
-  #   value_format_name: usd
+  # dimension: item_cost  {
+  #   description: "Item cost"
+  #   hidden: yes
+  #   label: "Item cost"
+  #   sql: ${products.cost} ;;
   # }
 
-  # measure: average_sales {
-  #   view_label: "Orders"
-  #   description: "Average Sales"
-  #   hidden: no
-  #   label: "Average Sales"
-  #   sql: ${price} ;;
-  #   type: average
-  #   value_format_name: usd
-  # }
+  dimension: item_margin {
+    view_label: "Product"
+    description: "Item margin"
+    hidden: yes
+    label: "Item margin"
+    sql: ${price}-${cost} ;;
+  }
 
-  # measure: total_cost {
-  #   view_label: "Orders"
-  #   description: "Total Cost"
-  #   hidden: no
-  #   label: "Total Cost"
-  #   sql: ${cost} ;;
-  #   type: sum
-  #   value_format_name: usd
-  # }
+  measure: total_sales {
+    view_label: "Orders"
+    description: "Total Sales"
+    hidden: no
+    label: "Total Sales"
+    sql: ${price} ;;
+    type: sum
+    value_format_name: usd
+  }
 
-  # measure: average_cost {
-  #   view_label: "Orders"
-  #   description: "Average Cost"
-  #   hidden: no
-  #   label: "Average Cost"
-  #   sql: ${cost} ;;
-  #   type: sum
-  #   value_format_name: usd
-  # }
+  measure: average_sales {
+    view_label: "Orders"
+    description: "Average Sales"
+    hidden: no
+    label: "Average Sales"
+    sql: ${price} ;;
+    type: average
+    value_format_name: usd
+  }
 
-  # measure: total_margin {
-  #   view_label: "Orders"
-  #   description: "Total Margin"
-  #   hidden: no
-  #   label: "Total Margin"
-  #   sql: ${item_margin} ;;
-  #   type: sum
-  #   value_format_name: usd
-  # }
+  measure: total_cost {
+    view_label: "Orders"
+    description: "Total Cost"
+    hidden: no
+    label: "Total Cost"
+    sql: ${cost} ;;
+    type: sum
+    value_format_name: usd
+  }
 
-  # measure: average_margin {
-  #   view_label: "Orders"
-  #   description: "Average Margin"
-  #   hidden: no
-  #   label: "Average Margin"
-  #   sql: ${item_margin} ;;
-  #   type: average
-  #   value_format_name: usd
-  # }
+  measure: average_cost {
+    view_label: "Orders"
+    description: "Average Cost"
+    hidden: no
+    label: "Average Cost"
+    sql: ${cost} ;;
+    type: sum
+    value_format_name: usd
+  }
+
+  measure: total_margin {
+    view_label: "Orders"
+    description: "Total Margin"
+    hidden: no
+    label: "Total Margin"
+    sql: ${item_margin} ;;
+    type: sum
+    value_format_name: usd
+  }
+
+  measure: average_margin {
+    view_label: "Orders"
+    description: "Average Margin"
+    hidden: no
+    label: "Average Margin"
+    sql: ${item_margin} ;;
+    type: average
+    value_format_name: usd
+  }
 
     ##########  ##########  ##########  ##########  ##########  ##########  ##########  ##########  ##########  ##########  ##########  ##########  ##########  ##########
 

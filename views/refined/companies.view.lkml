@@ -1,6 +1,6 @@
 include: "/views/raw/companies.view.lkml"
 
-explore: companies {}
+# explore: companies {}
 
 view: +companies {
   label: "Company"

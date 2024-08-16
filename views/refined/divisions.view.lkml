@@ -1,7 +1,7 @@
 include: "/views/raw/divisions.view.lkml"
 include: "/views/extends/address.view.lkml"
 
-explore: divisions {}
+# explore: divisions {}
 
 view: +divisions {
   extends: [address]

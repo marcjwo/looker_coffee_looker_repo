@@ -1,6 +1,6 @@
 include: "/views/raw/products.view.lkml"
 
-explore: products {}
+# explore: products {}
 
 view: +products {
   label: "Products"

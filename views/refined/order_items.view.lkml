@@ -1,6 +1,6 @@
 include: "/views/raw/order_items.view.lkml"
 
-explore: order_items {}
+# explore: order_items {}
 
 view: +order_items {
   label: "Orders"
