@@ -35,9 +35,9 @@ view: orders_and_items {
       column: product_id { field: products.id }
       column: country_of_origin { field: products.country_of_origin }
       column: order_items_id {field: order_items.id}
-      # derived_column: primary_key {
-      #   sql: FARM_FINGERPRINT(CAST(CONCAT(order_id,order_items_id) as STRING)) ;;
-      # }
+      derived_column: primary_key {
+        sql: FARM_FINGERPRINT(CAST(CONCAT(order_id,order_items_id) as STRING)) ;;
+      }
     }
   }
 
@@ -46,11 +46,12 @@ view: orders_and_items {
   #   # sql: ${created_date} ;;
   # }
 
-  # dimension: primary_key {
-  #   hidden: yes
-  #   primary_key: yes
-  #   # sql: CONCAT(${order_id},${order_items_id}) ;;
-  # }
+  dimension: primary_key {
+    hidden: yes
+    primary_key: yes
+    type: number
+    # sql: CONCAT(${order_id},${order_items_id}) ;;
+  }
 
   dimension: company_id {
     hidden: yes
@@ -84,6 +85,7 @@ view: orders_and_items {
     hidden: no
     view_label: "Orders"
     description: "Type of order, dine in or take away"
+    type: string
   }
   dimension: customer_id {
     hidden: no
@@ -91,11 +93,6 @@ view: orders_and_items {
     description: "Customer that issued the order, can be null"
     type: number
   }
-  # dimension_group: created {
-  #   label: "Orders Created Time"
-  #   description: "Date and time the order was placed"
-  #   type: date_time
-  # }
 
   dimension_group: created {
     view_label: "Orders"
@@ -126,17 +123,20 @@ view: orders_and_items {
 
 
   dimension: name {
+    type: string
     hidden: no
     view_label: "Product"
     description: "Product name"
   }
   dimension: price {
+    value_format_name: usd
     hidden: no
     view_label: "Product"
     description: "Product retail price"
     type: number
   }
   dimension: size {
+    type: string
     hidden: no
     view_label: "Product"
     description: "Product serving size"
@@ -148,11 +148,13 @@ view: orders_and_items {
     type: number
   }
   dimension: category {
+    type: string
     hidden: no
     view_label: "Product"
     description: "Product category"
   }
   dimension: brand {
+    type: string
     hidden: no
     view_label: "Product"
     description: "Product brand"
@@ -164,6 +166,7 @@ view: orders_and_items {
     type: number
   }
   dimension: country_of_origin {
+    type: string
     hidden: no
     view_label: "Product"
     description: "Product country of origin"
