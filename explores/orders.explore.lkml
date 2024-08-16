@@ -49,6 +49,10 @@ explore: order_items {
 
 }
 
+explore: orders_and_items_test {
+  from: orders_and_items
+}
+
 explore: orders_and_items {
   # label: "(1) Orders, Products, and Customers_test"
 

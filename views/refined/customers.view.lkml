@@ -1,6 +1,6 @@
 include: "/views/raw/customers.view.lkml"
 
-explore: customers {}
+# explore: customers {}
 
 view: +customers {
   label: "Customers"
