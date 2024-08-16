@@ -1,4 +1,7 @@
 include: "/views/raw/companies.view.lkml"
+
+explore: companies {}
+
 view: +companies {
   label: "Company"
   fields_hidden_by_default: yes

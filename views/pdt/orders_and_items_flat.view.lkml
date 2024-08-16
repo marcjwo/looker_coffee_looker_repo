@@ -53,131 +53,131 @@ view: orders_and_items {
     # sql: CONCAT(${order_id},${order_items_id}) ;;
   }
 
-  # dimension: company_id {
-  #   hidden: yes
-  #   label: "Company ID"
-  #   description: "Company ID"
-  #   type: number
-  # }
+  dimension: company_id {
+    hidden: yes
+    label: "Company ID"
+    description: "Company ID"
+    type: number
+  }
 
-  # dimension: location_id {
-  #   hidden: yes
-  #   label: "Location ID"
-  #   description: "Location ID"
-  #   type: number
-  # }
+  dimension: location_id {
+    hidden: yes
+    label: "Location ID"
+    description: "Location ID"
+    type: number
+  }
 
-  # dimension: division_id {
-  #   hidden: yes
-  #   label: "Division ID"
-  #   description: "Division ID"
-  #   type: number
-  # }
+  dimension: division_id {
+    hidden: yes
+    label: "Division ID"
+    description: "Division ID"
+    type: number
+  }
 
-  # dimension: order_id {
-  #   hidden: yes
-  #   label: "Order ID"
-  #   description: "Order ID"
-  #   type: number
-  # }
+  dimension: order_id {
+    hidden: yes
+    label: "Order ID"
+    description: "Order ID"
+    type: number
+  }
 
-  # dimension: order_type {
-  #   hidden: no
-  #   view_label: "Orders"
-  #   description: "Type of order, dine in or take away"
-  #   type: string
-  # }
-  # dimension: customer_id {
-  #   hidden: no
-  #   view_label: "Customers"
-  #   description: "Customer that issued the order, can be null"
-  #   type: string
-  # }
+  dimension: order_type {
+    hidden: no
+    view_label: "Orders"
+    description: "Type of order, dine in or take away"
+    type: string
+  }
+  dimension: customer_id {
+    hidden: no
+    view_label: "Customers"
+    description: "Customer that issued the order, can be null"
+    type: string
+  }
 
-  # dimension_group: created {
-  #   view_label: "Orders"
-  #   label: "Created"
-  #   type: time
-  #   datatype: datetime
-  #   description: "Date and time the order was placed"
-  #   hidden: no
-  #   timeframes: [date, month_name,month, year, quarter, week, day_of_week, raw, time]
-  # }
+  dimension_group: created {
+    view_label: "Orders"
+    label: "Created"
+    type: time
+    datatype: datetime
+    description: "Date and time the order was placed"
+    hidden: no
+    timeframes: [date, month_name,month, year, quarter, week, day_of_week, raw, time]
+  }
 
-  # dimension_group: completed {
-  #   view_label: "Orders"
-  #   label: "Completed"
-  #   type: time
+  dimension_group: completed {
+    view_label: "Orders"
+    label: "Completed"
+    type: time
+    description: "Date and time the order was completed"
+    hidden: no
+    timeframes: [date, month_name,month, year, quarter, week, day_of_week, raw, time]
+  }
+
+
+
+  # dimension_group: completed_datetime_time {
+  #   label: "Orders Completed Time"
   #   description: "Date and time the order was completed"
-  #   hidden: no
-  #   timeframes: [date, month_name,month, year, quarter, week, day_of_week, raw, time]
+  #   type: date_time
   # }
 
 
-
-  # # dimension_group: completed_datetime_time {
-  # #   label: "Orders Completed Time"
-  # #   description: "Date and time the order was completed"
-  # #   type: date_time
-  # # }
-
-
-  # dimension: name {
-  #   type: string
-  #   hidden: no
-  #   view_label: "Product"
-  #   description: "Product name"
-  # }
-  # dimension: price {
-  #   value_format_name: usd
-  #   hidden: no
-  #   view_label: "Product"
-  #   description: "Product retail price"
-  #   type: number
-  # }
-  # dimension: size {
-  #   type: string
-  #   hidden: no
-  #   view_label: "Product"
-  #   description: "Product serving size"
-  # }
-  # dimension: cost {
-  #   hidden: no
-  #   view_label: "Product"
-  #   description: "Product costs"
-  #   type: number
-  # }
-  # dimension: category {
-  #   type: string
-  #   hidden: no
-  #   view_label: "Product"
-  #   description: "Product category"
-  # }
-  # dimension: brand {
-  #   type: string
-  #   hidden: no
-  #   view_label: "Product"
-  #   description: "Product brand"
-  # }
-  # dimension: product_id {
-  #   hidden: yes
-  #   view_label: "Product"
-  #   description: "Product ID"
-  #   type: number
-  # }
-  # dimension: country_of_origin {
-  #   type: string
-  #   hidden: no
-  #   view_label: "Product"
-  #   description: "Product country of origin"
-  # }
-  # dimension: order_items_id {
-  #   hidden: no
-  #   view_label: "Orders"
-  #   label: "Order Item ID"
-  #   description: "Order Item ID"
-  #   type: number
-  # }
+  dimension: name {
+    type: string
+    hidden: no
+    view_label: "Product"
+    description: "Product name"
+  }
+  dimension: price {
+    value_format_name: usd
+    hidden: no
+    view_label: "Product"
+    description: "Product retail price"
+    type: number
+  }
+  dimension: size {
+    type: string
+    hidden: no
+    view_label: "Product"
+    description: "Product serving size"
+  }
+  dimension: cost {
+    hidden: no
+    view_label: "Product"
+    description: "Product costs"
+    type: number
+  }
+  dimension: category {
+    type: string
+    hidden: no
+    view_label: "Product"
+    description: "Product category"
+  }
+  dimension: brand {
+    type: string
+    hidden: no
+    view_label: "Product"
+    description: "Product brand"
+  }
+  dimension: product_id {
+    hidden: yes
+    view_label: "Product"
+    description: "Product ID"
+    type: number
+  }
+  dimension: country_of_origin {
+    type: string
+    hidden: no
+    view_label: "Product"
+    description: "Product country of origin"
+  }
+  dimension: order_items_id {
+    hidden: no
+    view_label: "Orders"
+    label: "Order Item ID"
+    description: "Order Item ID"
+    type: number
+  }
 
   ##########  ##########  ##########  ##########  ##########  ##########  ##########  ##########  ##########  ##########  ##########  ##########  ##########  ##########  ##########
 

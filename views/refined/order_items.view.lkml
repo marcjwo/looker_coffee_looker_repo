@@ -1,5 +1,7 @@
 include: "/views/raw/order_items.view.lkml"
 
+explore: order_items {}
+
 view: +order_items {
   label: "Orders"
   fields_hidden_by_default: yes

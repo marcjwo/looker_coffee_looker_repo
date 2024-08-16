@@ -1,5 +1,7 @@
 include: "/views/raw/products.view.lkml"
 
+explore: products {}
+
 view: +products {
   label: "Products"
   fields_hidden_by_default: yes

@@ -1,6 +1,8 @@
 include: "/views/raw/locations.view.lkml"
 include: "/views/extends/address.view.lkml"
 
+explore: locations {}
+
 view: +locations {
   extends: [address]
   label: "Locations"

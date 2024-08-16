@@ -1,12 +1,13 @@
 # Un-hide and use this explore, or copy the joins into another explore, to get all the fully nested relationships from this view
-explore: companies {
-  hidden: yes
-    join: companies__divisions {
-      view_label: "Companies: Divisions"
-      sql: LEFT JOIN UNNEST(${companies.divisions}) as companies__divisions ;;
-      relationship: one_to_many
-    }
-}
+# explore: companies {
+#   hidden: yes
+#     join: companies__divisions {
+#       view_label: "Companies: Divisions"
+#       sql: LEFT JOIN UNNEST(${companies.divisions}) as companies__divisions ;;
+#       relationship: one_to_many
+#     }
+# }
+
 view: companies {
   sql_table_name: `@{gcp_project}.@{bq_dataset}.companies` ;;
   drill_fields: [id]

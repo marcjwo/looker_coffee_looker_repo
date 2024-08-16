@@ -1,4 +1,7 @@
 include: "/views/raw/orders.view.lkml"
+
+explore: orders {}
+
 view: +orders {
   label: "Orders"
   fields_hidden_by_default: yes
