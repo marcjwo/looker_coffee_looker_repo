@@ -3,7 +3,7 @@
 include: "/views/refined/*.*"
 
 explore: orders_and_items_test {
-  from:orders_and_items
+  from: orders_and_items
   # join: customers {
   #   sql_on: ${customers.id} = ${orders_and_items_test.customer_id};;
   #   type: left_outer
@@ -91,7 +91,7 @@ view: orders_and_items {
     hidden: no
     view_label: "Customers"
     description: "Customer that issued the order, can be null"
-    type: number
+    type: string
   }
 
   dimension_group: created {
