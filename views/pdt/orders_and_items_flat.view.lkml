@@ -4,11 +4,11 @@ include: "/views/refined/*.*"
 
 explore: orders_and_items_test {
   from:orders_and_items
-  join: customers {
-    sql_on: ${customers.id} = ${orders_and_items_test.customer_id};;
-    type: left_outer
-    relationship: many_to_one
-  }
+  # join: customers {
+  #   sql_on: ${customers.id} = ${orders_and_items_test.customer_id};;
+  #   type: left_outer
+  #   relationship: many_to_one
+  # }
 }
 
 view: orders_and_items {
@@ -35,9 +35,9 @@ view: orders_and_items {
       column: product_id { field: products.id }
       column: country_of_origin { field: products.country_of_origin }
       column: order_items_id {field: order_items.id}
-      derived_column: primary_key {
-        sql: FARM_FINGERPRINT(CAST(CONCAT(order_id,order_items_id) as STRING)) ;;
-      }
+      # derived_column: primary_key {
+      #   sql: FARM_FINGERPRINT(CAST(CONCAT(order_id,order_items_id) as STRING)) ;;
+      # }
     }
   }
 
@@ -46,11 +46,11 @@ view: orders_and_items {
   #   # sql: ${created_date} ;;
   # }
 
-  dimension: primary_key {
-    hidden: yes
-    primary_key: yes
-    # sql: CONCAT(${order_id},${order_items_id}) ;;
-  }
+  # dimension: primary_key {
+  #   hidden: yes
+  #   primary_key: yes
+  #   # sql: CONCAT(${order_id},${order_items_id}) ;;
+  # }
 
   dimension: company_id {
     hidden: yes
