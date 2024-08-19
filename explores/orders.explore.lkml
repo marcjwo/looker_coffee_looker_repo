@@ -2,7 +2,8 @@ include: "/views/refined/*.view.lkml"
 include: "/views/pdt/*.view.lkml"
 
 explore: order_items {
-  label: "(1) Orders, Products, and Customers"
+  hidden: yes # needs to exist for the derived table creation
+  # label: "(1) Orders, Products, and Customers"
 
   join: orders {
     type: left_outer
@@ -49,7 +50,7 @@ explore: order_items {
 }
 
 explore: orders_and_items {
-  label: "(1) Orders, Products, and Customers_test"
+  label: "(1) Orders, Products, and Customers"
 
   join: locations {
     type: left_outer
