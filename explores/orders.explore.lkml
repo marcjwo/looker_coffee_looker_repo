@@ -69,11 +69,11 @@ explore: orders_and_items {
     relationship: many_to_one
   }
 
-  join: products {
-    type: left_outer
-    sql_on: ${orders_and_items.product_id} = ${products.id} ;;
-    relationship: many_to_one
-  }
+  # join: products {
+  #   type: left_outer
+  #   sql_on: ${orders_and_items.product_id} = ${products.id} ;;
+  #   relationship: many_to_one
+  # }
 
   join: customers {
     type: left_outer
