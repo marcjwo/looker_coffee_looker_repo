@@ -1,7 +1,7 @@
 project_name: "looker_coffee"
 
 constant: connection_name {
-  value: "sample_bigquery_connection"
+  value: "sample_bigquery_connection_looker_coffee"
 }
 
 constant: gcp_project {
