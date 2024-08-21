@@ -1,5 +1,5 @@
-# connection: "@{connection_name}"
-connection: "sample_bigquery_connection"
+# connection: "sample_bigquery_connection_looker_coffee"
+connection: "@{connection_name}"
 
 label: "Looker Coffee [DEMO]"
 
