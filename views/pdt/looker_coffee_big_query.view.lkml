@@ -24,6 +24,7 @@ view: looker_coffee_big_query {
       column: completed_time {}
       column: created_time {}
       column: order_items_id {}
+      column: order_id {}
       column: order_type {}
       column: brand {}
       column: category {}
@@ -82,6 +83,12 @@ view: looker_coffee_big_query {
   dimension: order_items_id {
     label: "Orders Order Item ID"
     description: "Order Item ID"
+    type: number
+  }
+
+  dimension: order_id {
+    label: "Orders Order ID"
+    description: "Order ID"
     type: number
   }
   dimension: order_type {

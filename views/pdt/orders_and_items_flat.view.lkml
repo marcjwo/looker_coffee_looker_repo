@@ -75,7 +75,8 @@ view: orders_and_items {
   }
 
   dimension: order_id {
-    hidden: yes
+    view_label: "Orders"
+    hidden: no
     label: "Order ID"
     description: "Order ID"
     type: number
@@ -88,7 +89,7 @@ view: orders_and_items {
     type: string
   }
   dimension: customer_id {
-    hidden: no
+    hidden: yes
     view_label: "Customers"
     description: "Customer that issued the order, can be null"
     type: string

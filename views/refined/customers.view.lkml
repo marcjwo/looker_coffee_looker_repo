@@ -8,6 +8,7 @@ view: +customers {
 
   dimension: id {
     primary_key: yes
+    label: "Customer ID"
     hidden: no
   }
 
