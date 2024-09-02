@@ -109,6 +109,7 @@ view: orders_and_items {
     view_label: "Orders"
     label: "Completed"
     type: time
+    datatype: datetime
     description: "Date and time the order was completed"
     hidden: no
     timeframes: [date, month_name,month, year, quarter, week, day_of_week, raw, time]
