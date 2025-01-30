@@ -1,11 +1,11 @@
 project_name: "looker_coffee"
 
 constant: connection_name {
-  value: "sample_bigquery_connection_looker_coffee"
+  value: "default_bigquery_connection"
 }
 
 constant: gcp_project {
-  value: "gemini-looker-demo-dataset"
+  value: "cloudbi-opm-joonix-playground"
 }
 
 constant: bq_dataset {
