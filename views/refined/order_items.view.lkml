@@ -65,7 +65,7 @@ view: +order_items {
     hidden: no
     label: "Average Cost"
     sql: ${item_cost} ;;
-    type: sum
+    type: average
     value_format_name: usd
   }
 
